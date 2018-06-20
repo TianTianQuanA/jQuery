@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="jquery-1.12.4.js"></script>
+
+<body>
+<ul>
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+    <li>我是第3个li</li>
+    <li>我是第4个li</li>
+    <li>我是第5个li</li>
+    <li>我是第6个li</li>
+    <li>我是第7个li</li>
+    <li>我是第8个li</li>
+    <li>我是第9个li</li>
+    <li>我是第10个li</li>
+</ul>
+<script>
+
+    $(function(){
+       $('li:odd').css('backgroundColor','red');
+        $('li:even').css('backgroundColor','green');
+        $('li:first').css('fontSize','30px');
+        $('li:last').css('fontSize','50px');
+        $('li:eq(5)').css('lineHeight','100px');
+
+
+    });
+
+
+
+</script>
+</body>
+</html>

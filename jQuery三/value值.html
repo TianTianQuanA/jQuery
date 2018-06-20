@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button>获取</button>
+<button>设置</button>
+<input type="text" value="海尔空调">
+<script src="jquery-1.12.4.js"></script>
+<script>
+
+    //val方法专门用于获取文本框的value值
+    //val(): 不传参数表示获取文本框的值
+    //val(value): 传参数表示设置input框的value
+
+
+    $("button").eq(0).click(function () {
+        var ret = $("input").val();
+        console.log(ret);
+    })
+    $("button").eq(1).click(function () {
+        $("input").val("哈哈");
+    })
+
+
+
+    //思路
+    //1. 给input注册focus事件, 判断value值是否是 海尔空调, 如果是清空原来的值
+    //2. 给input注册blur事件，判断value值是否是 空 ， 设置为默认值
+
+
+    $('input').focus(function(){
+
+        if( $(this).val() === "海尔空调"){
+            $(this).val('')
+        }
+    })
+
+    $('input').blur(function(){
+
+        if( $(this).val() === ""){
+            $(this).val('海尔空调')
+        }
+    })
+
+
+
+
+
+
+
+
+    //    $("input").focus(function () {
+//        if( $(this).val() === "海尔空调" ) {
+//            //设置值为空
+//            $(this).val('');
+//        }
+//    });
+//
+//    $("input").blur(function () {
+//        if( $(this).val() === "" ) {
+//            //设置值为空
+//            $(this).val("海尔空调");
+//        }
+//    });
+
+</script>
+
+</body>
+</html>

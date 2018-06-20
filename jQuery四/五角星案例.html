@@ -1,0 +1,112 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>五角星评分案例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .comment {
+            font-size: 40px;
+            color: red;
+        }
+
+        .comment li {
+            float: left;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+
+</head>
+
+<body>
+<ul class="comment">
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+</ul>
+
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+
+    //1. 鼠标经过某一个li， 让当前的以及前面的li都变成实心,后面的都变空心 （把文字改一下）
+    //2. 当鼠标离开整个ul的时候，让所有的li都变成空心
+    //3, 点击的时候
+    $(function(){
+
+        var $li = $('.comment li');
+        $li.on('mouseenter',function(){
+            $(this).text('★').prevAll().text('★');
+            $(this).nextAll().text('☆');
+        })
+        $('.comment').on('mouseleave',function(){
+            $li.text('☆');
+            $('.now').text('★').prevAll().text('★');
+        })
+        $li.on('click',function(){
+            $(this).addClass('now').siblings().removeClass('now');
+
+        })
+
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+//    var $li = $(".comment li");
+//
+//    $li.on("mouseenter", function () {
+//
+//        //注意：不要连在一起写
+//        $(this).text("★").prevAll().text("★");
+//        $(this).nextAll().text("☆");
+//    });
+//
+//    $(".comment").on("mouseleave", function () {
+//        //先清空所有
+//        $li.text("☆");
+//        //找到点击的那个li，让他前面的以及自己变成实心就行
+//        $("li.now").text("★").prevAll().text("★");
+//
+//    })
+//
+//
+//    //在点击的这个li上留下一个标记
+//    $li.on("click", function () {
+//        $(this).addClass("now").siblings().removeClass("now");
+//    });
+
+</script>
+
+
+</body>
+
+</html>
